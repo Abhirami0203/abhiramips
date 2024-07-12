@@ -600,11 +600,164 @@ section .title::after {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 } */
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-content {
-        flex-direction: column;
-    }
+/* Responsive Media Queries */
+
+@media (max-width: 1300px) {
+  .max-width {
+    padding: 0 50px;
+  }
 }
+
+@media (max-width: 1104px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .menu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: crimson;
+    top: 0;
+    left: -100%;
+    text-align: center;
+    padding-top: 80px;
+    transition: all 0.3s ease;
+  }
+
+  .menu.active {
+    left: 0;
+  }
+
+  .menu li {
+    display: block;
+  }
+
+  .menu li a {
+    margin-left: -100%;
+    display: block;
+    margin: 10px 0;
+    font-size: 25px;
+  }
+
+  .navbar .menu li a {
+    color: #fff;
+  }
+
+  .navbar .menu li a:hover {
+    color: #333;
+  }
+
+  .navbar.sticky .menu li a {
+    color: #fff;
+  }
+
+  .navbar.sticky .menu li a:hover {
+    color: #333;
+  }
+
+  .about .about-content .column.left,
+  .about .about-content .column.right,
+  .contact .contact-content .column {
+    width: 100%;
+  }
+
+  .about .about-content .right .text,
+  .about .about-content .right p,
+  .contact .contact-content .text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .home .max-width {
+    padding: 0 50px;
+  }
+
+  .home .home-content {
+    text-align: center;
+  }
+
+  .home .home-content .text-2 {
+    font-size: 55px;
+  }
+
+  .home .home-content .text-3 {
+    font-size: 30px;
+  }
+
+  .skills .skills-content,
+  .contact .contact-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skills .column.right .skill-box {
+    margin-left: 0;
+  }
+
+  .skills .column.right .skill-box .single-skill {
+    width: calc(50% - 30px);
+    margin: 10px auto;
+  }
+
+  .contact .contact-content .right form .fields {
+    flex-direction: column;
+  }
+
+  .contact .contact-content .right form .fields .field {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .max-width {
+    padding: 0 20px;
+  }
+
+  .navbar .logo a {
+    font-size: 20px;
+  }
+
+  .navbar .menu li a {
+    font-size: 20px;
+  }
+
+  .home .home-content .text-1 {
+    font-size: 20px;
+  }
+
+  .home .home-content .text-2 {
+    font-size: 40px;
+  }
+
+  .home .home-content .text-3 {
+    font-size: 20px;
+  }
+
+  .home .home-content a {
+    font-size: 20px;
+  }
+
+  .about .about-content .left img {
+    width: 200px;
+    height: 250px;
+  }
+
+  .about .about-content .right {
+    width: 100%;
+  }
+
+  .contact .contact-content .column {
+    width: 100%;
+  }
+
+  .contact .contact-content .right form .fields .field {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
 
 
