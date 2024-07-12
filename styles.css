@@ -1,0 +1,616 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+
+/* CSS * Selector, Select all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 999;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+  padding: 2px 0;
+  /* background-color: crimson; */
+}
+
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a {
+  font-size: 30px;
+  font-weight: 500;
+  color: #130505;
+  font-family: "Pacifico";
+  transition: all 0.3s ease;
+}
+
+.navbar .logo a span {
+  color: crimson;
+}
+
+.navbar.sticky .logo a span {
+  color: rgb(178, 52, 52);
+}
+
+.navbar.sticky .logo a:hover,
+.navbar.sticky .logo a span:hover {
+  color: #f0f0f0;
+  ;
+}
+
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.navbar .menu li a {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  color: #0c0202;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+  color: crimson;
+}
+
+.navbar.sticky .menu li a:hover {
+        display: block;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+.navbar.sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        /* background-color: white; */
+        z-index: 999;
+        transition: all 0.3s ease;
+      }
+.navbar a {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-left: 4rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar a:hover::after,
+.navbar a:focus::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Menu Button Styling */
+.menu-btn {
+  color: white;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Scroll button styling */
+.scroll-up-btn {
+  position: fixed;
+  height: 50px;
+  width: 47px;
+  background: crimson;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  z-index: 999;
+  font-size: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+  bottom: 30px;
+}
+
+/* Fade In & Fade Out Elements on Scroll Start */
+.fadein {
+  opacity: 0.5;
+}
+
+.showme {
+  transition: opacity 0.1s ease;
+  opacity: 1 !important;
+}
+
+/* Home Section Styling */
+.home {
+  display: flex;
+  background: #f0f0f0;
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  color: rgb(11, 2, 2);
+  min-height: 500px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.home .max-width {
+  margin: auto 0 auto 40px;
+}
+
+.home .home-content .text-1 {
+  font-size: 27px;
+}
+
+.home .home-content .text-2 {
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+
+.home .home-content .text-3 {
+  font-size: 40px;
+  margin: 5px 0;
+}
+
+.home .home-content .text-3 span {
+  font-weight: 500;
+  color: crimson;
+}
+
+.home .home-content a {
+  display: inline-block;
+  background: crimson;
+  color: #f0f0f0;
+  font-size: 25px;
+  padding: 8px 20px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+
+.home .home-content .web {
+  margin-right: 25px;
+}
+
+.home .home-content a:hover {
+  color: rgb(21, 9, 9);
+  background: #e9e6e6;
+}
+
+/* all similar content styling code */
+section {
+  padding: 100px 0;
+}
+
+.about,
+.skills,
+.projects,
+.contact,
+footer {
+  font-family: "Poppins", sans-serif;
+}
+
+.about .about-content,
+.skills .skills-content,
+.contact .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section .title {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+section .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 180px;
+  height: 3px;
+  background: #111;
+  transform: translateX(-50%);
+}
+
+section .title::after {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  padding: 5px;
+  font-size: 20px;
+  color: crimson;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+/* General Styles */
+.skills{
+  background: #f0f0f0;
+  color: black;
+}
+
+.skills .title::before,
+.contact .title::before {
+  background: #fff;
+}
+
+/* Skills Section Styling */
+.skills .skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Adjust the gap between skill boxes */
+}
+
+.skills .column.right .skill-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Adjust the gap between skill boxes */
+  margin-left: 350px;
+}
+
+.skills .column.right .skill-box .single-skill {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.skills .column.right .skill-box .single-skill img {
+  width: 60px; /* Adjust image size as needed */
+  height: 60px; /* Adjust image size as needed */
+  object-fit: cover;
+  border-radius: 50%; /* Make the image circular */
+  border: 2px solid rgb(221, 219, 214); 
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.skills .column.right .skill-box .single-skill img:hover {
+  transform: scale(1.1); /* Enlarge image on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 6px 6px rgba(0, 0, 0, 0.23); /* Add shadow effect */
+}
+
+/* About Section Styling */
+.about .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.about .about-content .left {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about .about-content .column.left img {
+    height: 400px;
+    width: 300px; /* Adjust width for oval shape */
+    object-fit: cover;
+    border-radius: 50%; /* Make the image oval */
+    margin-bottom: 20px; /* Add some space between the image and buttons */
+    border: 2px solid rgb(244, 241, 241); /* Add a border */
+    box-shadow: 0 10px 20px rgba(240, 238, 238, 0.5), 0 6px 6px rgba(236, 231, 231, 0.23); /* Add shadow effect */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about .about-content .column.left img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.22); /* Add a more pronounced shadow on hover */
+}
+
+.about .about-content .left .social-media {
+    display: flex;
+    margin-top: 20px;
+}
+
+.about .about-content .left .social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border: 0.2rem solid whitesmoke;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: black;
+    margin: 0 1rem; /* Horizontal margin between buttons */
+    transition: 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about .about-content .left .social-media a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: 0.5s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.about .about-content .left .social-media a:hover::before {
+    opacity: 1;
+}
+
+.about .about-content .left .social-media a:hover {
+    background: var(--accent-color);
+    color: var(--secondary-bg-color);
+    box-shadow: 0 0 1rem var(--accent-color);
+    z-index: 2;
+}
+
+.about .about-content .right {
+    width: 50%; /* Adjust the width as needed */
+    padding-left: 20px; /* Optional: add some padding for better spacing */
+}
+
+:root {
+    --accent-color: #0e1f3f;
+    --secondary-bg-color: #ffffff;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid var(--accent-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-media a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: 0.5s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.social-media a:hover::before {
+    opacity: 1;
+}
+
+.social-media a:hover {
+    background: var(--accent-color);
+    color: var(--secondary-bg-color);
+    box-shadow: 0 0 1rem var(--accent-color);
+    z-index: 2;
+}
+:root {
+    --secondary-bg-color: #f0f0f0;
+    --accent-color: #b92b27;
+    --light-accent-color: #d9534f;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --bg-color: #ffffff;
+}
+
+.projects {
+    background: white;
+    padding: 3rem 2% 1rem;
+    position: relative;
+}
+
+.carousel.owl-carousel {
+    display: flex; /* Use flexbox to align items in a row */
+    flex-wrap: wrap; /* Allow wrapping to fit all cards */
+    justify-content: space-around; /* Adjust alignment as needed */
+    overflow: hidden; /* Disable scrolling */
+}
+
+.card {
+    width: 250px; /* Set the width to ensure equal size */
+    height: 380px; /* Ensure max-width */
+    background: var(--bg-color);
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px var(--box-shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin: 1rem; /* Add margin between cards */
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px var(--box-shadow-color);
+}
+
+.card .box {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.card .text {
+    font-size: 20px;
+    color: var(--accent-color);
+    margin: 0.8rem 0;
+}
+
+.card p {
+    font-size: 15px;
+    color: #333;
+    margin: 0.4rem 0 1rem;
+}
+
+/* Contact Section Styling */
+.contact {
+    background: #f0f0f0;
+    padding: 100px 0;
+    color: #333;
+}
+
+.contact .max-width {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact .title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+/* .contact .title::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background: #333; /* Set the underline color to match the heading color */
+    /* left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px; 
+} */
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-content .column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-content .column.left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-content .info .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-content .info .row i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: var(--accent-color);
+}
+
+.contact-content .info .row .info-text .head {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.contact-content .info .row .info-text .sub-title {
+    font-size: 1rem;
+    color: #555;
+}
+
+.contact-content .column.right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .contact-content .column.right .contact-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+}
+
+
